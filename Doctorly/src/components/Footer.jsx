@@ -1,5 +1,6 @@
 import React from "react";
 import { assets } from "../assets/assets";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -24,10 +25,37 @@ const Footer = () => {
           {" "}
           <h1 className="text-xl text-white font-bold">Company Info</h1>
           <ul className="text-gray-400 mt-2">
-            <li className="mt-2 cursor-pointer">Home</li>
-            <li className="mt-2 cursor-pointer">About Us</li>
-            <li className="mt-2 cursor-pointer">Contact Us</li>
-            <li className="mt-2 cursor-pointer">Privacy policy</li>
+            <NavLink
+              to="/"
+              onClick={() => {
+                scrollTo(0, 0);
+              }}
+            >
+              <li className="mt-2 cursor-pointer hover:text-gray-200">Home</li>
+            </NavLink>
+            <NavLink
+              to="/about"
+              onClick={() => {
+                scrollTo(0, 0);
+              }}
+            >
+              <li className="mt-2 cursor-pointer hover:text-gray-200">
+                About Us
+              </li>
+            </NavLink>
+            <NavLink
+              to="/contact"
+              onClick={() => {
+                scrollTo(0, 0);
+              }}
+            >
+              <li className="mt-2 cursor-pointer hover:text-gray-200">
+                Contact Us
+              </li>
+            </NavLink>
+            <li className="mt-2 cursor-pointer hover:text-gray-200">
+              Privacy policy
+            </li>
           </ul>
         </div>
 
@@ -35,9 +63,15 @@ const Footer = () => {
         <div>
           <h1 className="text-xl text-white font-bold">Contact Info</h1>
           <ul className="text-gray-400 mt-2">
-            <li className=" cursor-pointer">(316) 444-0223</li>
-            <li className=" cursor-pointer">doctorly@gmail.com</li>
-            <li className=" cursor-pointer">www.doctorly.com</li>
+            <li className=" cursor-pointer hover:text-gray-200">
+              (316) 444-0223
+            </li>
+            <li className=" cursor-pointer hover:text-gray-200">
+              doctorly@gmail.com
+            </li>
+            <li className=" cursor-pointer hover:text-gray-200">
+              www.doctorly.com
+            </li>
           </ul>
 
           <h1 className="text-xl text-white font-bold mt-2">Follow Us</h1>

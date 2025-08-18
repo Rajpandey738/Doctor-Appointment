@@ -8,7 +8,7 @@ const FindDoctor = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center gap-4 py-16 bg-zinc-300 text-[#1C352D]">
+    <div className="flex flex-col items-center gap-4 py-16 bg-gray-200 text-[#1C352D]">
       <h1 className="text-2xl font-medium">
         FIND OUR{" "}
         <span className="bg-[#1C352D] text-white px-1 py-8 rounded-[50%]">
@@ -21,7 +21,10 @@ const FindDoctor = () => {
       <div className="w-full flex flex-wrap gap-4 justify-center pt-5 px-8 sm:px-16">
         {doctors.slice(0, 6).map((item, index) => (
           <div
-            onClick={() => navigate(`/appointment/${item._id}`)}
+            onClick={() => {
+              navigate(`/appointment/${item._id}`);
+              scrollTo(0, 0);
+            }}
             key={index}
             className="w-full sm:w-[48%] lg:w-[31%] flex"
           >

@@ -1,8 +1,10 @@
 import React from "react";
 import { assets } from "../assets/assets";
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col-reverse md:flex-row items-center justify-between px-6 lg:px-20 py-10 bg-gray-50">
       {/* ----Left Side---- */}
@@ -18,9 +20,15 @@ const Header = () => {
           <a href="#speciality">
             <Button variant="primary">Book An Appointment</Button>
           </a>
-          <a href="">
-            <Button variant="secondary">Learn More</Button>
-          </a>
+          <Button
+            onClick={() => {
+              navigate("/about");
+              scrollTo(0, 0);
+            }}
+            variant="secondary"
+          >
+            Learn More
+          </Button>
         </div>
       </div>
 

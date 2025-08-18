@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import DoctorCard from "../components/DoctorCard";
 import { doctors } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
+import { specialityData } from "../assets/assets";
 
 const Doctors = () => {
   const navigate = useNavigate();
@@ -28,7 +29,23 @@ const Doctors = () => {
       </p>
       <div className="flex flex-col sm:flex-row items-start gap-5 mt-5">
         <div className="flex flex-col mb-7 sm:mb-0 border-b-2 sm:border-none pb-4 sm:pb-0 gap-4 text-sm text-[#1C352D]">
-          <p
+          {specialityData.map((spec, idx) => (
+            <p
+              key={idx}
+              onClick={() =>
+                speciality === spec.speciality
+                  ? navigate("/doctors")
+                  : navigate(`/doctors/${spec.speciality}`)
+              }
+              className={`w-[90vw] sm:w-auto pl-3 py-1.5 pr-16 border border-[#1c352D] rounded-2xl hover:bg-[#1C352D] hover:text-white transition-all duration-500 ${
+                speciality === spec.speciality ? "bg-[#1C352D] text-white" : ""
+              }`}
+            >
+              {spec.speciality}
+            </p>
+          ))}
+
+          {/* <p
             onClick={() =>
               speciality === "General physician"
                 ? navigate("/doctors")
@@ -103,7 +120,7 @@ const Doctors = () => {
             }`}
           >
             Gastroenterologist
-          </p>
+          </p> */}
         </div>
         <div className="w-full flex flex-wrap flex-col md:flex-row gap-4">
           {filterDoc.map((item, index) => (

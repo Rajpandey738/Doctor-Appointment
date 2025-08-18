@@ -47,10 +47,13 @@ import instagram from "./instagram-icon.svg";
 import linkedIn from "./linkedin-icon.svg";
 import youtube from "./youtube-icon.svg";
 import facebook from "./facebook-icon.svg";
+import aboutDoc from "./aboutDoc.png";
+import checkIcon from "./circle-check-icon.svg";
 
 export const assets = {
   appointment_img,
   header_img,
+  checkIcon,
   group_profiles,
   logo,
   chats_icon,
@@ -60,6 +63,7 @@ export const assets = {
   arrow_icon,
   contact_image,
   about_image,
+  aboutDoc,
   menu_icon,
   cross_icon,
   dropdown_icon,
