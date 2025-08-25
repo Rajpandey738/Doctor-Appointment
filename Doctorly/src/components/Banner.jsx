@@ -18,7 +18,7 @@ const Banner = () => {
         </div>
         <button
           onClick={() => {
-            navigate("/login");
+            navigate("/create-account");
             scrollTo(0, 0);
           }}
           className="border-2 border-amber-50 text-white px-4 py-2 md:px-6 md:py-3 mt-6 rounded-full font-medium transition-all duration-300 hover:bg-amber-50 hover:text-[#1C352D] cursor-pointer"
